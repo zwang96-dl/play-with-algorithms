@@ -9,9 +9,3 @@ def selection_sort(arr):
             if arr[j] < arr[min_index]:
                 min_index = j
         arr[i], arr[min_index] = arr[min_index], arr[i]
-
-
-if __name__ == '__main__':
-    n = 10000
-    arr = generate_random_array(n, 0, n)
-    test_sort('selection_sort', selection_sort, arr)
