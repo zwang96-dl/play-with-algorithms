@@ -34,7 +34,12 @@ Any quesitons please email to wangzhe.dut@gmail.com
 
 
 6. Heap sort
-- sift up
-- sift down
-- heapify 所有的叶子节点可以看成是最大堆，第一个非叶子节点是最后一个叶子节点的index除以2（index // 2），对每一个非叶子节点（反向）进行sift_down即可
+- shift up
+- shift down
+- heapify 所有的叶子节点可以看成是最大堆，第一个非叶子节点是最后一个叶子节点的index除以2（index // 2），对每一个非叶子节点（反向）进行shift_down即可
 - 一个个插入空堆，时间复杂度是O(nlogn)，heapify是O(n) !!!! 因为上来就抛弃了近乎一半的叶子节点
+- 可以原地堆排序优化（空间优化），空间复杂度O(1)
+- 现将最大的值放在数组最后一个位置，再与第一个位置交换并shift_down
+- 快排额外空间是O(logn)
+- 插入，归并是稳定排序；快排和堆排是不稳定排序，可以自定义比较函数，让排序算法不存在稳定性问题。
+- 索引堆（Index Heap）新建一个索引数组，不用移动原始数组，而改变索引数组即可（典型的空间换时间策略），适合于复杂元素数组（move cost比较大的）
