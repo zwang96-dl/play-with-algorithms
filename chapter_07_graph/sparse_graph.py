@@ -41,15 +41,10 @@ class SparseGraph:
         return self._g[v]
 
     def __str__(self):
-        ret = ['<chapter_07_graph.sparse_graph.SparseGraph object>: \n']
+        ret = ['<chapter_07_graph.sparse_graph.SparseGraph object>:']
         for v in range(len(self._g)):
-            ret.append(
-                '{:2d}: '.format(v) + \
-                ' '.join('{:3d}'.format(w) for w in self._g[v]) + \
-                '\n'
-            )
-        ret[-1] = ret[-1][:-1]
-        return ''.join(ret)
+            ret.append('{:2d}: '.format(v) + ' '.join('{:3d}'.format(w) for w in self._g[v]))
+        return '\n'.join(ret)
 
     def __repr__(self):
         return self.__str__()
@@ -57,8 +52,9 @@ class SparseGraph:
     @classmethod
     def from_local_file(cls, directed, filename):
         with open(filename, 'r') as f:
-            data_str = f.read()
-        data = [[int(j) for j in each_row_str.split()] for each_row_str in data_str.split()]
+            rows = f.read()
+        rows = rows.split('\n')
+        data = [[int(j) for j in each_row_str.split()] for each_row_str in rows]
         graph = cls(n=len(data), directed=directed)
         for v in range(len(data)):
             for w in data[v]:

@@ -70,3 +70,9 @@ Any quesitons please email to wangzhe.dut@gmail.com
 - 平行边（parallel-edges）
 - 简单图（没有自环边和平行边）
 - 图的表示：邻接矩阵（Adjacency Matrix，适合稠密图）,邻接表（Adjacency Lists，适合稀疏图）
+- DFS -> 稀疏图（邻接表）：O(V+E)
+- DFS -> 稠密图（邻接矩阵）：O(V^2)
+- 广度优先：在加入队列之前时刻判断是否应该加入队列，可以用来找最短距离，先遍历到的点的距离一定小于等于后遍历到的点的距离
+- 广度优先复杂度和深度优先的复杂度一致
+- flood fill算法（PS抠图）
+- 二分图(买方，卖方，路径是达成交易的价格)

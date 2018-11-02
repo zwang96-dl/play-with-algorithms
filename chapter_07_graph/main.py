@@ -1,6 +1,8 @@
 from chapter_07_graph.sparse_graph import SparseGraph
 from chapter_07_graph.dense_graph import DenseGraph
 from chapter_07_graph.component import Component
+from chapter_07_graph.path import Path
+from chapter_07_graph.shortest_path import ShortestPath
 
 
 if __name__ == '__main__':
@@ -32,16 +34,16 @@ if __name__ == '__main__':
 
     # dense_graph = DenseGraph.from_local_file(
     #     directed=False,
-    #     filename='./chapter_07_graph/testG.txt',
+    #     filename='./chapter_07_graph/testG2.txt',
     # )
     # print(dense_graph)
 
-    sparse_graph = SparseGraph.from_local_file(
-        directed=False,
-        filename='./chapter_07_graph/testG1.txt',
-    )
-    component = Component(sparse_graph)
-    print(component.count())
+    # sparse_graph = SparseGraph.from_local_file(
+    #     directed=False,
+    #     filename='./chapter_07_graph/testG1.txt',
+    # )
+    # component = Component(sparse_graph)
+    # print(component.count())
 
     # sparse_graph1 = SparseGraph.from_local_file(
     #     directed=False,
@@ -63,3 +65,19 @@ if __name__ == '__main__':
     # sparse_graph.add_edge(1, 2)
     # component = Component(sparse_graph)
     # print(component.count())
+
+    sparse_graph = SparseGraph.from_local_file(
+        directed=False,
+        filename='./chapter_07_graph/testG2.txt',
+    )
+    path = Path(sparse_graph, 0)
+    print('DFS: ')
+    path.show_path(6)
+
+    sparse_graph_bfs = SparseGraph.from_local_file(
+        directed=False,
+        filename='./chapter_07_graph/testG2.txt',
+    )
+    shortest_path = ShortestPath(sparse_graph_bfs, 0)
+    print('BFS: ')
+    shortest_path.show_path(6)
