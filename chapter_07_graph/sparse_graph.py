@@ -43,7 +43,11 @@ class SparseGraph:
     def __str__(self):
         ret = ['<chapter_07_graph.sparse_graph.SparseGraph object>: \n']
         for v in range(len(self._g)):
-            ret.append('{:2d}: '.format(v) + ' '.join('{:3d}'.format(w) for w in self._g[v]) + '\n')
+            ret.append(
+                '{:2d}: '.format(v) + \
+                ' '.join('{:3d}'.format(w) for w in self._g[v]) + \
+                '\n'
+            )
         ret[-1] = ret[-1][:-1]
         return ''.join(ret)
 
