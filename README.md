@@ -54,6 +54,19 @@ Any quesitons please email to wangzhe.dut@gmail.com
 - 对于有序的数列才能使用二分查找
 - floor and ceil
 
+
 8. 并查集
 - 解决的是连接问题（而不是路径问题），少了很多信息，因此可以更高效的回答。
 - 并查集的操作时间复杂度近乎是O(1)的
+
+
+9. Graph
+- 无向图（Undirected Graph）
+- 有向图（Directed Graph）
+- 无权图（Unweighted Graph）
+- 有权图（Weighted Graph）
+- 图的连通性（图中的点不一定都是连在一起的）
+- 自环边（self-loop）
+- 平行边（parallel-edges）
+- 简单图（没有自环边和平行边）
+- 图的表示：邻接矩阵（Adjacency Matrix，适合稠密图）,邻接表（Adjacency Lists，适合稀疏图）
