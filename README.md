@@ -53,3 +53,7 @@ Any quesitons please email to wangzhe.dut@gmail.com
 7. 二分查找
 - 对于有序的数列才能使用二分查找
 - floor and ceil
+
+8. 并查集
+- 解决的是连接问题（而不是路径问题），少了很多信息，因此可以更高效的回答。
+- 并查集的操作时间复杂度近乎是O(1)的
