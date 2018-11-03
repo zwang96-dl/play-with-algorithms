@@ -30,7 +30,6 @@ class DenseGraph:
         return self._g[v][w]
 
     def __iter__(self):
-        """`i for i in dense_graph_obj`"""
         yield from self._g
 
     def __len__(self):

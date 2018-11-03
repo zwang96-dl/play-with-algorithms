@@ -1,6 +1,6 @@
 ## play-with-data-structures
 
-Python implementation of imooc course [玩转数据结构](https://coding.imooc.com/class/207.html), thanks for that great course (instructor [liuyubobobo](https://github.com/liuyubobobo)) !
+Python implementation of imooc course [学习算法思想，修炼编程内功](http://coding.imooc.com/class/71.html), thanks for that great course (instructor [liuyubobobo](https://github.com/liuyubobobo)) !
 
 Any pull-request is welcome:)
 
@@ -78,6 +78,7 @@ Any quesitons please email to wangzhe.dut@gmail.com
 - 二分图(买方，卖方，路径是达成交易的价格)
 - 带权图(weighted graph)
 
+
 9. Minimum Span Tree
 - 是否存在一棵树，能够连接所有的点，并且路径之和最小？
 - 带权无向图（连通图）
@@ -87,3 +88,23 @@ Any quesitons please email to wangzhe.dut@gmail.com
 - 给定任意切分，横切边中权值最小的边必然属于最小生成树
 - Prim算法:从任意一个点开始，加上weight最小的边（到一个最小堆中）和节点，类似贪心思路, 优化后从O(logE)到O(ElogV)
 - Kruskal：扫描所有的边（从小到大），只要不能变成环，就是一条边 O(ElogE)
+
+
+10. 最短路径问题
+- 单源最短路径：single source shortest path
+- 有权图的松弛操作：找到一条更短的路径（尽管可能多经过了点，更“松”的路径）.
+- 每遍历一个点，都考虑一下经过这个点是否可能让路径长度更低。
+- dijkstra:有向图单源最短路径算法(图中不能有负权边), O(ElogV),求的是起始点到所有点最短的路径
+- 处理负权边（有时候会产生负权环 -> 会导致没有最短路径）
+- Bellman-Ford （前提图中不能负权环，但该算法可以判断图中是否有负权环）, O(EV)
+- 如果一个图没有负权环，从一点到另一个点的最短路径，最多经过的V个顶点，有V-1条边。否则，存在顶点经过了两次，即存在负权环。
+- 依旧找最短的边，但是此时最短边并不能保证全局最短（因为有负权），可以对所有的点进行第二次松弛操作。
+- 理论上对所有的点进行V-1次松弛操作，理论上就找到了从原点到其他所有点的最短路径。如果还可以继续松弛，即说明图中有负权环。
+- 有向无环图（DAG）可以用拓扑排序O(V+E)
+- Floyed算法O(V^3),处理无负权环的图，动态规划思想
+
+11. 杂项
+- 分治
+- 贪心
+- 递归回溯
+- DP

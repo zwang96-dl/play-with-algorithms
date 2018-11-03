@@ -30,7 +30,6 @@ class SparseGraph:
         return False
 
     def __iter__(self):
-        """`i for i in sparse_graph_obj`"""
         yield from self._g
 
     def __len__(self):
