@@ -76,3 +76,13 @@ Any quesitons please email to wangzhe.dut@gmail.com
 - 广度优先复杂度和深度优先的复杂度一致
 - flood fill算法（PS抠图）
 - 二分图(买方，卖方，路径是达成交易的价格)
+- 带权图(weighted graph)
+
+9. Minimum Span Tree
+- 是否存在一棵树，能够连接所有的点，并且路径之和最小？
+- 带权无向图（连通图）
+- 找V-1条边，连接V个顶点，总权值最小
+- Cut Property(切分定理),把图中的节点分成两部分，成为一个切分
+- 横切边（连接两个切分的边）
+- 给定任意切分，横切边中权值最小的边必然属于最小生成树
+- Prim算法:从任意一个点开始，加上weight最小的边（到一个最小堆中）和节点，类似贪心思路, O(ElogV)
