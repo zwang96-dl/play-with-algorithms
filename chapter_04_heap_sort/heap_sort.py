@@ -146,7 +146,7 @@ class IndexMaxHeap:
     def extract_max(self):
         assert self._count > 0, 'can not extract_max from empty heap'
         ret = self._data[self._indexes[1]]
-        self._data[self._indexes[1]], self._data[self._indexes[self._count]] = self._data[self._indexes[self._count]], self._data[self._indexes[1]]
+        self._swap_indexes(self, 1, self._count)
         self._reverse[self._indexes[1]] = 1
         self._reverse[self._indexes[self._count]] = 0
         self._count -= 1
@@ -156,7 +156,7 @@ class IndexMaxHeap:
     def extract_max_index(self):
         assert self._count > 0, 'can not extract_max from empty heap'
         ret_index = self._indexes[1] - 1
-        self._data[self._indexes[1]], self._data[self._indexes[self._count]] = self._data[self._indexes[self._count]], self._data[self._indexes[1]]
+        self._swap_indexes(self, 1, self._count)
         self._reverse[self._indexes[1]] = 1
         self._reverse[self._indexes[self._count]] = 0
         self._count -= 1
@@ -167,7 +167,7 @@ class IndexMaxHeap:
         assert i + 1 >= 1 and i + 1 <= self._capacity
         return self._reverse[i + 1] != 0
 
-    def get_item(i):
+    def get_item(self, i):
         assert self._contains(i), 'i is invalid!'
         return self._data[i + 1]
 
@@ -185,6 +185,11 @@ class IndexMaxHeap:
         j = self._reverse[i]
         self._shift_up(j)
         self._shift_down(j)
+
+    def _swap_indexes(self, i, j):
+        self._indexes[i], self._indexes[j] = self._indexes[j], self._indexes[i]
+        self._reverse[self._indexes[i]] = i
+        self._reverse[self._indexes[j]] = j
 
     def _shift_up(self, index):
         # 因为是最大堆，所以父亲节点的值应该要比孩子节点的值要大的

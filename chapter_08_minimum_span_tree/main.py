@@ -2,6 +2,7 @@ from chapter_08_minimum_span_tree.dense_graph import DenseGraph
 from chapter_08_minimum_span_tree.sparse_graph import SparseGraph
 from chapter_08_minimum_span_tree.lazy_prim_mst import LazyPrimMST
 from chapter_08_minimum_span_tree.lazy_prim_heap import PrimMST
+from chapter_08_minimum_span_tree.kruskal_mst import KruskalMST
 
 
 
@@ -19,7 +20,7 @@ if __name__ == '__main__':
     # print(sparse_graph)
 
     sparse_graph = SparseGraph.from_local_file(
-        directed=True,
+        directed=False,
         filename='./chapter_08_minimum_span_tree/testG1.txt',
     )
 
@@ -30,3 +31,7 @@ if __name__ == '__main__':
     prime_mst = PrimMST(sparse_graph)
     print('prime_mst Edges: ', prime_mst.mst_edges())
     print('prime_mst Minium weight sum: ', prime_mst.result())
+
+    kruskal_mst = KruskalMST(sparse_graph)
+    print('kruskal_mst Edges: ', kruskal_mst.mst_edges())
+    print('kruskal_mst Minium weight sum: ', kruskal_mst.result())

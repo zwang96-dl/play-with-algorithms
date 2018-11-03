@@ -85,4 +85,5 @@ Any quesitons please email to wangzhe.dut@gmail.com
 - Cut Property(切分定理),把图中的节点分成两部分，成为一个切分
 - 横切边（连接两个切分的边）
 - 给定任意切分，横切边中权值最小的边必然属于最小生成树
-- Prim算法:从任意一个点开始，加上weight最小的边（到一个最小堆中）和节点，类似贪心思路, O(ElogV)
+- Prim算法:从任意一个点开始，加上weight最小的边（到一个最小堆中）和节点，类似贪心思路, 优化后从O(logE)到O(ElogV)
+- Kruskal：扫描所有的边（从小到大），只要不能变成环，就是一条边 O(ElogE)
